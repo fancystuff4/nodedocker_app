@@ -1,0 +1,15 @@
+[Unit]
+Description=My Node Server
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/local/bin/node /usr/src/app.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=my-node-server
+User=root
+
+[Install]
+WantedBy=multi-user.target
